@@ -1,5 +1,0 @@
-fa:  # type "File"
-    class: File
-    path: ../DATA/small.chr22.fa
-    format: http://edamontology.org/format_1929
-      
