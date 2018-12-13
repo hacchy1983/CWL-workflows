@@ -79,7 +79,15 @@ steps:
       fq1: trimPE/trimFq1P
       fq2: trimPE/trimFq2P
     out: [sam]
-    
+
+  sam2bam:
+    label: sam2bam
+    doc: Convert SAM to BAM
+    run: ../Tools/samtools-sam2bam.cwl
+    in:
+      sam: map/sam
+    out: [bam]
+
 outputs:
   oqc1:
     type: File
@@ -96,3 +104,6 @@ outputs:
   sam:
     type: File
     outputSource: map/sam
+  bam:
+    type: File
+    outputSource: sam2bam/bam
