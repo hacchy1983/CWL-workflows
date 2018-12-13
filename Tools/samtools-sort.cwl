@@ -13,7 +13,6 @@ hints:
     dockerPull: 'quay.io/biocontainers/samtools:1.9--h8ee4bcc_1'
 
 requirements:
-  - class: InlineJavascriptRequirement
   - class: ShellCommandRequirement
 
 baseCommand: [ samtools, sort ]
@@ -24,14 +23,13 @@ inputs:
     format: edam:format_2572
     inputBinding:
       position: 1
-    doc: BAM alignment file 
-    
+    doc: BAM alignment file
+
 outputs:
   - id: sorted-bam
     type: stdout
     format: edam:format_2572
 
 stdout: output.sort.bam
-      
-arguments: []
 
+arguments: []

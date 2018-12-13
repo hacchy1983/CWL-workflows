@@ -13,7 +13,6 @@ hints:
     dockerPull: 'quay.io/biocontainers/bwa:0.7.4--ha92aebf_0'
 
 requirements:
-  - class: InlineJavascriptRequirement
   - class: ShellCommandRequirement
 
 baseCommand: [ bwa, mem ]
@@ -37,18 +36,17 @@ inputs:
     inputBinding:
       position: 4
     doc: FastQ file from next-generation sequencers
-    
+
 outputs:
   - id: sam
     type: stdout
     format: edam:format_2573
 
 stdout: output.sam
-      
+
 arguments:
   - position: 1
     prefix: -t
     valueFrom: "4"
   - position: 2
     valueFrom: $(inputs.fadir.path)/$(inputs.ref).fa
-
