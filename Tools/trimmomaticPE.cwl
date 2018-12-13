@@ -15,17 +15,24 @@ hints:
 baseCommand: [ java, -jar ]
 
 inputs:
+  - id: nthreads
+    type: int?
+    default: 2
+    inputBinding:
+      prefix: -threads
+      position: 3
+    doc: number of cpu cores to be used
   - id: fq1
     type: File
     format: edam:format_1930
     inputBinding:
-      position: 3
+      position: 4
     doc: FastQ file from next-generation sequencers
   - id: fq2
     type: File
     format: edam:format_1930
     inputBinding:
-      position: 4
+      position: 5
     doc: FastQ file from next-generation sequencers
 
 outputs:
@@ -55,13 +62,13 @@ arguments:
     valueFrom: /usr/local/share/trimmomatic/trimmomatic.jar
   - position: 2
     valueFrom: PE
-  - position: 5
-    valueFrom: $(inputs.fq1.basename).trim.1P.fastq
   - position: 6
-    valueFrom: $(inputs.fq1.basename).trim.1U.fastq
+    valueFrom: $(inputs.fq1.basename).trim.1P.fastq
   - position: 7
-    valueFrom: $(inputs.fq2.basename).trim.2P.fastq
+    valueFrom: $(inputs.fq1.basename).trim.1U.fastq
   - position: 8
-    valueFrom: $(inputs.fq2.basename).trim.2U.fastq
+    valueFrom: $(inputs.fq2.basename).trim.2P.fastq
   - position: 9
+    valueFrom: $(inputs.fq2.basename).trim.2U.fastq
+  - position: 10
     valueFrom: 'ILLUMINACLIP:/usr/local/share/trimmomatic/adapters/TruSeq2-PE.fa:2:40:15'

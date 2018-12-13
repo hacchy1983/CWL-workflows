@@ -20,6 +20,13 @@ requirements:
 baseCommand: [ bwa, mem ]
 
 inputs:
+  - id: nthreads
+    type: int?
+    default: 2
+    inputBinding:
+      prefix: -t
+      position: 1
+    doc: number of cpu cores to be used
   - id: fadir
     type: Directory
     doc: directory containing FastA file and index
@@ -47,9 +54,6 @@ outputs:
 stdout: output.sam
 
 arguments:
-  - position: 1
-    prefix: -t
-    valueFrom: "4"
   - position: 2
     prefix: -K
     valueFrom: "100000000"
