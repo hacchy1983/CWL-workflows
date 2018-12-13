@@ -22,4 +22,5 @@ toil-cwl-runner Workflows/test-workflow.cwl Jobs/small.ERR034597.test-workflow.y
 
 # Visualize test-workflow.cwl
 (Visualize at 2018-12-12 using CWL Viewer https://view.commonwl.org)
-![test-workflow.cwl](https://github.com/hacchy1983/CWL-workflows/blob/images/graph.png "test-workflow.cwl")
+
+[![test-workflow.cwl](https://github.com/hacchy1983/CWL-workflows/blob/images/graph.png "test-workflow.cwl")](https://view.commonwl.org/workflows/github.com/hacchy1983/CWL-workflows/blob/master/Workflows/test-workflow.cwl)
