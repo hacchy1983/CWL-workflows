@@ -12,9 +12,6 @@ hints:
   - class: DockerRequirement
     dockerPull: 'quay.io/biocontainers/trimmomatic:0.38--1'
 
-requirements:
-  - class: InlineJavascriptRequirement
-
 baseCommand: [ java, -jar ]
 
 inputs:
@@ -68,4 +65,3 @@ arguments:
     valueFrom: $(inputs.fq2.basename).trim.2U.fastq
   - position: 9
     valueFrom: 'ILLUMINACLIP:/usr/local/share/trimmomatic/adapters/TruSeq2-PE.fa:2:40:15'
-

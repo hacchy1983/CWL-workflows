@@ -13,7 +13,6 @@ hints:
     dockerPull: 'quay.io/biocontainers/samtools:1.9--h8ee4bcc_1'
 
 requirements:
-  - class: InlineJavascriptRequirement
   - class: ShellCommandRequirement
 
 baseCommand: [ samtools, view , -bS ]
@@ -24,14 +23,13 @@ inputs:
     format: edam:format_2573
     inputBinding:
       position: 1
-    doc: SAM alignment file 
-    
+    doc: SAM alignment file
+
 outputs:
   - id: bam
     type: stdout
     format: edam:format_2572
 
 stdout: output.bam
-      
-arguments: []
 
+arguments: []
