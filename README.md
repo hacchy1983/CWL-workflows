@@ -21,7 +21,9 @@ toil-cwl-runner Workflows/test-workflow.cwl Jobs/small.ERR034597.test-workflow.y
 ```
 
 # Functional equivalence (FE) of genome sequencing analysis pipelines
-To be FE, I will write CWL workflows that are consistent with the FE standard described in [PMID: 30279509](https://www.ncbi.nlm.nih.gov/pubmed/30279509)
+I will write CWL workflows that are consistent with the FE standard described in [PMID: 30279509](https://www.ncbi.nlm.nih.gov/pubmed/30279509)
+
+For example, I use bwa-mem (v0.7.15-r1140) with the parameters “-K 100000000 -p -Y”.
 
 
 # Visualize test-workflow.cwl
