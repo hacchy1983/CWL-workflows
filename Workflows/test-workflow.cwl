@@ -88,6 +88,14 @@ steps:
       sam: map/sam
     out: [bam]
 
+  sort:
+    label: sort
+    doc: Sort BAM
+    run: ../Tools/samtools-sort.cwl
+    in:
+      bam: sam2bam/bam
+    out: [sorted-bam]
+    
 outputs:
   oqc1:
     type: File
@@ -107,3 +115,6 @@ outputs:
   bam:
     type: File
     outputSource: sam2bam/bam
+  osort:
+    type: File
+    outputSource: sort/sorted-bam
