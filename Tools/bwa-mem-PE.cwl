@@ -1,8 +1,8 @@
 #!/usr/bin/env cwl-runner
 
 class: CommandLineTool
-id: bwa-mem-PE-0.7.4--ha92aebf_0
-label: bwa-mem-PE-0.7.4--ha92aebf_0
+id: bwa-mem-PE-0.7.15--1
+label: bwa-mem-PE-0.7.15--1
 cwlVersion: v1.0
 
 $namespaces:
@@ -10,7 +10,7 @@ $namespaces:
 
 hints:
   - class: DockerRequirement
-    dockerPull: 'quay.io/biocontainers/bwa:0.7.4--ha92aebf_0'
+    dockerPull: 'quay.io/biocontainers/bwa:0.7.15--1'
 
 requirements:
   - class: ShellCommandRequirement
@@ -28,13 +28,13 @@ inputs:
     type: File
     format: edam:format_1930
     inputBinding:
-      position: 3
+      position: 6
     doc: FastQ file from next-generation sequencers
   - id: fq2
     type: File
     format: edam:format_1930
     inputBinding:
-      position: 4
+      position: 7
     doc: FastQ file from next-generation sequencers
 
 outputs:
@@ -49,4 +49,11 @@ arguments:
     prefix: -t
     valueFrom: "4"
   - position: 2
+    prefix: -K
+    valueFrom: "100000000"
+  - position: 3
+    valueFrom: "-Y"
+  - position: 4
+    valueFrom: "-p"
+  - position: 5
     valueFrom: $(inputs.fadir.path)/$(inputs.ref).fa
