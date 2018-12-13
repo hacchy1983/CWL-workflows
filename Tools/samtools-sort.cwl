@@ -31,7 +31,7 @@ outputs:
     type: stdout
     format: edam:format_2572
 
-stdout: $(inputs.bam.nameroot).sort.bam
+stdout: output.sort.bam
       
 arguments: []
 

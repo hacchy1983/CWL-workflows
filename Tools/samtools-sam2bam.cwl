@@ -31,7 +31,7 @@ outputs:
     type: stdout
     format: edam:format_2572
 
-stdout: $(inputs.sam.nameroot).bam
+stdout: output.bam
       
 arguments: []
 
