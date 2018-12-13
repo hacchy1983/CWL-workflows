@@ -14,6 +14,8 @@ hints:
 
 requirements:
   - class: ShellCommandRequirement
+  - class: ResourceRequirement
+    coresMin: 4
 
 baseCommand: [ bwa, mem ]
 
