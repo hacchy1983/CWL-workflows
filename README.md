@@ -20,6 +20,10 @@ pip install toil[cwl]
 toil-cwl-runner Workflows/test-workflow.cwl Jobs/small.ERR034597.test-workflow.yml
 ```
 
+# Functional equivalence (FE) of genome sequencing analysis pipelines
+To be FE, I will write CWL workflows that are consistent with the FE standard described in [PMID: 30279509](https://www.ncbi.nlm.nih.gov/pubmed/30279509)
+
+
 # Visualize test-workflow.cwl
 (Visualize at 2018-12-12 using CWL Viewer https://view.commonwl.org)
 
