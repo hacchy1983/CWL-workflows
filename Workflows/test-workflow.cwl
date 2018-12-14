@@ -88,6 +88,14 @@ steps:
       sam: map/sam
     out: [bam]
 
+  mark-dup:
+    label: mark-dup
+    doc: Mark duplicates
+    run: ../Tools/picard-mark-duplicates.cwl
+    in:
+      bam: sam2bam/bam
+    out: [marked-bam, metrix]
+    
   sort:
     label: sort
     doc: Sort BAM
@@ -115,6 +123,12 @@ outputs:
   bam:
     type: File
     outputSource: sam2bam/bam
+  marked-bam:
+    type: File
+    outputSource: mark-dup/marked-bam
+  marked-metrix:
+    type: File
+    outputSource: mark-dup/metrix
   osort:
     type: File
     outputSource: sort/sorted-bam
