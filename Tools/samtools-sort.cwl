@@ -18,11 +18,18 @@ requirements:
 baseCommand: [ samtools, sort ]
 
 inputs:
+  - id: nthreads
+    type: int?
+    default: 2
+    inputBinding:
+      prefix: -@
+      position: 1
+    doc: number of cpu cores to be used
   - id: bam
     type: File
     format: edam:format_2572
     inputBinding:
-      position: 1
+      position: 2
     doc: BAM alignment file
 
 outputs:

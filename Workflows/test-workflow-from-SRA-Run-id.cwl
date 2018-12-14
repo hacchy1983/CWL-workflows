@@ -56,6 +56,7 @@ steps:
     run: ../Tools/fastqc.cwl
     in:
       fastq: pfastq_dump/forward
+      nthreads: nthreads
     out: [qc]
 
   qc2:
@@ -64,6 +65,7 @@ steps:
     run: ../Tools/fastqc.cwl
     in:
       fastq: pfastq_dump/reverse
+      nthreads: nthreads
     out: [qc]
 
   trimPE:
@@ -81,6 +83,7 @@ steps:
     run: ../Tools/fastqc.cwl
     in:
       fastq: trimPE/trimFq1P
+      nthreads: nthreads
     out: [qc]
 
   qc2P:
@@ -89,6 +92,7 @@ steps:
     run: ../Tools/fastqc.cwl
     in:
       fastq: trimPE/trimFq2P
+      nthreads: nthreads
     out: [qc]
 
   map:
