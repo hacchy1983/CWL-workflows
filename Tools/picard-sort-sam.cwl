@@ -15,7 +15,7 @@ hints:
 requirements:
   - class: ShellCommandRequirement
 
-baseCommand: [ java, -jar, /usr/local/share/picard-2.18.20-0/picard.jar, MarkDuplicates ]
+baseCommand: [ java, -jar, /usr/local/share/picard-2.18.20-0/picard.jar, SortSam ]
 
 inputs:
   - id: bam
@@ -27,20 +27,14 @@ inputs:
     doc: BAM alignment file
 
 outputs:
-  - id: marked-bam
+  - id: sorted-bam
     type: File
     format: edam:format_2572
     outputBinding:
-      glob: output.mark.bam
-  - id: metrix
-    type: File
-    outputBinding:
-      glob: output.mark.metrix.txt
+      glob: output.sort.bam
 
 arguments:
   - position: 2
-    valueFrom: "O=output.mark.bam"
+    valueFrom: "O=output.sort.bam"
   - position: 3
-    valueFrom: "M=output.mark.metrix.txt"
-  - position: 4
-    valueFrom: "ASSUME_SORT_ORDER=queryname"
+    valueFrom: "SORT_ORDER=coordinate"

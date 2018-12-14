@@ -99,9 +99,9 @@ steps:
   sort:
     label: sort
     doc: Sort BAM
-    run: ../Tools/samtools-sort.cwl
+    run: ../Tools/picard-sort-sam.cwl
     in:
-      bam: sam2bam/bam
+      bam: mark-dup/marked-bam
     out: [sorted-bam]
     
 outputs:
@@ -129,6 +129,6 @@ outputs:
   marked-metrix:
     type: File
     outputSource: mark-dup/metrix
-  osort:
+  sorted-bam:
     type: File
     outputSource: sort/sorted-bam
