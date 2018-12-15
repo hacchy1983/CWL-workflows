@@ -15,7 +15,7 @@ baseCommand: [ wget ]
 inputs: []
 
 outputs:
-  - id: ref
+  - id: alt
     type: File
     outputBinding:
       glob: GRCh38_full_analysis_set_plus_decoy_hla.fa.alt
